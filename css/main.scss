@@ -1,0 +1,63 @@
+.page {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  align-items: center;
+
+  .nav-logo {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      user-select: none;
+      transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+
+  .menu-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+
+      span {
+        margin: 10px 0;
+      }
+    }
+
+    span {
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      margin: 5px 0;
+      transition: margin 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+}

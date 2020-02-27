@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css"
+      integrity="sha256-+dIh4jG2jQTHZwW81yUo8h6tzXWcNumyNL5XPZbwp1E="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="fullPage">
+      <div class="section s1">
+        <div class="page">
+          <nav class="nav">
+            <div class="nav-logo">
+              <img src="./assets/geebrox.png" alt="Geebrox" />
+            </div>
+            <div class="menu-button">
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="section s1">
+        <h1>the second section</h1>
+      </div>
+      <div class="section s1">
+        <h1>the third section</h1>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"
+      integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      new fullpage('#fullPage', {
+        autoScrolling: true
+      })
+    </script>
+  </body>
+</html>
