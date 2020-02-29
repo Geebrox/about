@@ -1,0 +1,13 @@
+<svg viewBox="0 0 429 439" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter x="-26.0%" y="-20.7%" width="152.0%" height="150.9%" id="filter">
+            <feOffset result="shadowOffsetOuter1" dy="16"></feOffset>
+            <feGaussianBlur result="shadowBlurOuter1" stdDeviation="26" in="shadowOffsetOuter1"></feGaussianBlur>
+            <feColorMatrix values="0.03 0 0 0 0 0 0.04 0 0 0 0 0 0.05 0 0 0 0 0 1 0" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g filter="url(#filter)">
+        <path d="M195.450075,48.5625 C205.825075,27.8125 222.646075,27.8125 233.021075,48.5625 L375.451075,333.4205 C385.825075,354.1705 375.434075,370.9915 352.234075,370.9915 L76.2370753,370.9915 C53.0400753,370.9915 42.6460753,354.1715 53.0210753,333.4205 L195.450075,48.5625 Z" id="path"></path>
+    </g>
+    <path d="M195.450075,48.5625 C205.825075,27.8125 222.646075,27.8125 233.021075,48.5625 L375.451075,333.4205 C385.825075,354.1705 375.434075,370.9915 352.234075,370.9915 L76.2370753,370.9915 C53.0400753,370.9915 42.6460753,354.1715 53.0210753,333.4205 L195.450075,48.5625 Z" id="path"></path>
+</svg>

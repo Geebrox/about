@@ -10,40 +10,118 @@
       integrity="sha256-+dIh4jG2jQTHZwW81yUo8h6tzXWcNumyNL5XPZbwp1E="
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
+
   <body>
+    <div class="fixed-container">
+      <div class="inner-container">
+        <div id="triangle_1">
+          <img src="./assets/triangle.svg" alt="Object" />
+        </div>
+        <div id="triangle_2">
+          <img src="./assets/triangle.svg" alt="Object" />
+        </div>
+        <nav class="nav">
+          <div class="nav-logo">
+            <img src="./assets/logo/min.svg" alt="Geebrox" />
+          </div>
+          <div id="navToggler" class="menu-button" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+      <div id="menuContainer">
+        <ul id="menu">
+          <li
+            data-menuanchor="home"
+            class="menu-item"
+            onmouseover="onMenuItemHover(this)"
+          >
+            <a href="#home">Home</a>
+          </li>
+          <li
+            data-menuanchor="aboutUs"
+            class="menu-item"
+            onmouseover="onMenuItemHover(this)"
+          >
+            <a href="#aboutUs">About Us</a>
+          </li>
+          <li
+            data-menuanchor="services"
+            class="menu-item"
+            onmouseover="onMenuItemHover(this)"
+          >
+            <a href="#services">Services</a>
+          </li>
+          <li
+            data-menuanchor="contact"
+            class="menu-item"
+            onmouseover="onMenuItemHover(this)"
+          >
+            <a href="#contact">contact</a>
+          </li>
+          <span id="menuDot"></span>
+        </ul>
+      </div>
+    </div>
     <div id="fullPage">
-      <div class="section s1">
-        <div class="page">
-          <nav class="nav">
-            <div class="nav-logo">
-              <img src="./assets/geebrox.png" alt="Geebrox" />
+      <div class="section page">
+        <div class="section-info">
+          <div class="section-logo">
+            <img src="./assets/logo/max.svg" alt="Geebrox" />
+          </div>
+          <div class="section-desc">
+            <p>WE CREATE</p>
+            <div class="animated-list">
+              <ul>
+                <li>design</li>
+                <li>quality</li>
+                <li>trends</li>
+                <li>experience</li>
+              </ul>
             </div>
-            <div class="menu-button">
-              <span></span>
-              <span></span>
-            </div>
-          </nav>
+          </div>
         </div>
       </div>
-      <div class="section s1">
-        <h1>the second section</h1>
+      <div class="section page">
+        <div class="section-info">
+          <h4 id="animatedTitle" class="section-title">About Us</h4>
+          <div id="animatedDescription" class="section-description">
+            <p>
+              We are young generation with <b>talent</b> of building beautiful
+              web sites. We are ready to share our experience with customers.
+              Our team uses <b>latest web technologies</b> to build websites,
+              which gives advantages of beautiful design with optimized
+              services. We are motivated to create new trends using our
+              knowledge in <b>seeking art</b> in each edge of world.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="section s1">
+      <div class="section page">
+        <h1>the third section</h1>
+      </div>
+      <div class="section page">
         <h1>the third section</h1>
       </div>
     </div>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"
       integrity="sha256-caNcSA0LvOCX90PTuEbwl+V09xPMca13CJUasl+VCtk="
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      new fullpage('#fullPage', {
-        autoScrolling: true
-      })
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
