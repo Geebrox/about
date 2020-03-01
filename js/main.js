@@ -1,3 +1,16 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('../serviceWorker.js')
+    .then(reg => {
+      // регистрация сработала
+      console.log('Registration succeeded. Scope is ' + reg.scope)
+    })
+    .catch(error => {
+      // регистрация прошла неудачно
+      console.log('Registration failed with ' + error)
+    })
+}
+
 var triangleStyleList = [
   [
     {
@@ -18,7 +31,7 @@ var triangleStyleList = [
     {
       top: 'calc(100% - 300px)',
       left: 'calc(100% - 300px)',
-      transform: 'rotate(170deg)'
+      transform: 'rotate(155deg)'
     }
   ],
   [
@@ -51,6 +64,7 @@ var menuDot = document.getElementById('menuDot')
 var menu = document.getElementById('menu')
 var menuDotMoving = false
 var isMenuMinized = window.innerWidth <= 700
+var nav = document.getElementById('nav')
 
 new fullpage('#fullPage', {
   anchors: ['home', 'aboutUs', 'services', 'contact'],
@@ -75,6 +89,35 @@ new fullpage('#fullPage', {
       sectionTitle.classList.remove('active')
       sectionDescription.classList.remove('active')
     }
+    if (destination.index === 2) {
+      var sectionTitle = document.getElementById('animatedTitle_2')
+
+      sectionTitle.classList.add('active')
+      animateCards(true)
+    } else if (origin.index === 2) {
+      var sectionTitle = document.getElementById('animatedTitle_2')
+
+      sectionTitle.classList.remove('active')
+      animateCards(false)
+    }
+    if (destination.index === 3) {
+      var sectionTitle = document.getElementById('animatedTitle_3')
+      var sectionContacts = document.getElementById('sectionContacts')
+
+      sectionContacts.classList.add('active')
+      sectionTitle.classList.add('active')
+
+      setTimeout(function() {
+        nav.style.filter = 'invert(100%)'
+      }, 350)
+    } else if (origin.index === 3) {
+      var sectionTitle = document.getElementById('animatedTitle_3')
+      var sectionContacts = document.getElementById('sectionContacts')
+
+      sectionContacts.classList.remove('active')
+      sectionTitle.classList.remove('active')
+      nav.style.filter = 'invert(0)'
+    }
   },
   afterRender: function() {
     setElementStyle(triangle_1, triangleStyleList[0][0])
@@ -88,13 +131,31 @@ new fullpage('#fullPage', {
         menuDotMoving = true
         setTimeout(setMenuDotToCenter, 200)
       } else if (e.target.innerWidth > 700 && isMenuMinized) {
-        isMenuMinized = true
+        isMenuMinized = false
         menuDotMoving = true
         setTimeout(setMenuDotToCenter, 200)
       }
     }
   }
 })
+
+function animateCards(activate) {
+  var cards = document.getElementsByClassName('card-container')
+
+  for (var i = 0; i < cards.length; i++) {
+    if (activate) {
+      setTimeout(
+        function(card) {
+          card.classList.add('active')
+        },
+        (i + 1) * 300,
+        cards[i]
+      )
+    } else {
+      cards[i].classList.remove('active')
+    }
+  }
+}
 
 function onMenuItemHover(el) {
   if (menuDotMoving) {
